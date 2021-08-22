@@ -126,8 +126,6 @@ def Treasure(iSize, arA, arB):
         arA[iIdx] = arCopyA[i]
     return arA
 
-print(iSize, arA, arB)
-
 if(len(arA) == iSize
     and len(arA) == iSize):
     arA = Treasure(iSize, arA, arB)
@@ -136,4 +134,5 @@ if(len(arA) == iSize
 else:
     print("크기 불일치")
 
-print(iSize, arA, arB, "S = ", S)
+# print(iSize, arA, arB, "S = ", S)
+print(S)
