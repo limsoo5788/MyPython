@@ -1,3 +1,5 @@
+'''
+
 # n개 배열에서 m개 만큼 숫자를 뽑고,
 # focus X 가 존재하고, X가 target을 향해 좌, 우중 최적의 경로로 진행하도록
 
@@ -78,8 +80,60 @@ for TargetNum in TargetList:
 
 print("총 이동", total)
 
+
 # 좌, 우로 한칸씩 이동
 # list 값이 0 이면 한칸 더 이동
 # 이동할 떄 마다 over 여부 검사
 
-    
+
+'''
+#================================================
+
+# 길이가 N인 정수 배열 A와 B
+# 함수 S를 정의하자.
+
+
+
+# 방법 1
+# def Treasure(iSize, arA, arB):
+#     for i in range(len(arA)):
+#         iSmall = 999
+#         iIdx = 0
+#         for iNum in arB:
+#             if(iSmall > iNum):
+#                 iSamll = iNum
+#         #가장 작은값이 어디 들었는지 찾기
+#         print("arB: ", arB)
+#         iIdx = arB.index(iSmall)
+#         print("iIdx: ", iIdx)
+#         arA[iIdx] = arC[i]
+
+iSize = int(input())
+arA = list(map(int, input().split()))
+arB = list(map(int, input().split()))
+S = 0
+
+# 방법 2
+def Treasure(iSize, arA, arB):
+    arCopyB = arB[:]
+    arCopyB.sort()
+    arCopyA = arA[:]
+    arCopyA.sort(reverse=True)
+    for i in range(len(arA)):
+        iIdx = 0
+        # iIdx = arB.index(int(min(arB)))
+        iIdx = arB.index(arCopyB[i])
+        arA[iIdx] = arCopyA[i]
+    return arA
+
+print(iSize, arA, arB)
+
+if(len(arA) == iSize
+    and len(arA) == iSize):
+    arA = Treasure(iSize, arA, arB)
+    for i in range(iSize):
+        S += arA[i] * arB[i]
+else:
+    print("크기 불일치")
+
+print(iSize, arA, arB, "S = ", S)
